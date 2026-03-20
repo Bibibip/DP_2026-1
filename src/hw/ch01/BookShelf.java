@@ -1,4 +1,4 @@
-package ch01.Sample;
+package hw.ch01;
 
 import java.util.Iterator;
 
@@ -26,5 +26,13 @@ public class BookShelf implements Iterable<Book> {
     @Override
     public Iterator<Book> iterator() {
         return new BookShelfIterator(this);
+    }
+
+    //Step3: 2가지 Iterator 반환
+    public Iterator<Book> iteratorByGenre(String genre){
+        return new IteratorByGenre(this, genre); 
+    }
+    public Iterator<Book> iteratorByYear(){
+        return new IteratorByYear(this);
     }
 }
