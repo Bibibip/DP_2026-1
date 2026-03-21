@@ -35,7 +35,7 @@ public class Main {
 
         //Step4: Iterator 사용
         //4-2. 장르 필터 Iterator 테스트
-        Iterator<Book> it1 = bookShelf.iteratorByGenre("소설");
+        Iterator<Book> it1 = bookShelf.iteratorByGenre("역사");
         System.out.println("장르별 책 목록:");
         while (it1.hasNext()) {
             System.out.println(it1.next().getName());
