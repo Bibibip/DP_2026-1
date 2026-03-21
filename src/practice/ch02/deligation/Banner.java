@@ -8,7 +8,7 @@ public class Banner {
         this.string = string;
     }
 
-    public void showWithParen() {
+    public void showWithParen() {   ///메소드 프로토타입
         System.out.println("(" + string + ")");
     }
 
