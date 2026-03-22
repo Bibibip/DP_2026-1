@@ -35,19 +35,22 @@ public class Main {
 
         //Step4: Iterator 사용
         //4-2. 장르 필터 Iterator 테스트
-        Iterator<Book> it1 = bookShelf.iteratorByGenre("역사");
         System.out.println("장르별 책 목록:");
+        Iterator<Book> it1 = bookShelf.iteratorByGenre("소설");
+        BookShelf filteredBooks = new BookShelf(bookShelf.getLength());
         while (it1.hasNext()) {
-            System.out.println(it1.next().getName());
+            Book book = it1.next();
+            System.out.println("제목: " + book.getName() + ", 장르: " + book.getGenre() +", 출판 연도: " + book.getYear() + ", 가격: " + book.getPrice() + "원");
+            filteredBooks.appendBook(book);
         }
         System.out.println();
         
         //4-3. 출판 연도 역순 Iterator 테스트
-        Iterator<Book> it2 = bookShelf.iteratorByYear();
         System.out.println("출판 연도 역순 책 목록:");
+        Iterator<Book> it2 = filteredBooks.iteratorByYear();
         while (it2.hasNext()) {
             Book book = it2.next();
-            System.out.println(book.getYear() + "년 책: " + book.getName());
+            System.out.println("제목: " + book.getName() + ", 장르: " + book.getGenre() +", 출판 연도: " + book.getYear() + ", 가격: " + book.getPrice() + "원");
         }
 
     }
