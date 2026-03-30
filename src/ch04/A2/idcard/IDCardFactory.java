@@ -5,10 +5,10 @@ import ch04.A2.framework.Factory;
 import ch04.A2.framework.Product;
 
 public class IDCardFactory extends Factory {
-    private int serial = 100;
+    private int serial = 100;   //시리얼 번호 관리 (첫 번째 번호 100번) - 정수 기본 데이터 타입
 
     protected synchronized Product createProduct(String owner) {
-        return new IDCard(owner, serial++);
+        return new IDCard(owner, serial++); //다음 번에 호출되면 101
     }
 
     @Override
