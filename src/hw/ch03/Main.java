@@ -14,6 +14,9 @@ public class Main {
         // d1,d2 모두 같은 AbstractDisplay의 하위 클래스의 인스턴스이므로
         // 상속한 display 메소드를 호출할 수 있다
         // 실제 동작은 CharDisplay나 StringDisplay 클래스에서 정해진다
+        System.out.println("20231009 선비");
+        System.out.println();
+        
         d1.display();
         d2.display();
         num.display();
