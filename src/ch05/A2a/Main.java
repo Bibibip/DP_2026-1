@@ -26,5 +26,5 @@ public class Main {
         }
         System.out.println("End.");
     }
-}
+}   // 출력해보면 알파, 감마, 베타 다 같다고 나옴
 
