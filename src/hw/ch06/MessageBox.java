@@ -1,17 +1,12 @@
-package ch06.A2;
+package hw.ch06;
 
-import ch06.A2.framework.Product;
+import hw.ch06.framework.Product;
 
 public class MessageBox implements Product {
     private char decochar;
 
     public MessageBox(char decochar) {
         this.decochar = decochar;
-    }
-
-    // 복사 생성자 
-    public MessageBox(MessageBox prototype) {
-        this.decochar = prototype.decochar;
     }
 
     @Override
@@ -30,7 +25,12 @@ public class MessageBox implements Product {
 
     @Override
     public Product createCopy() {
-        return new MessageBox(this);
-        // 자기자신을 가지고 복사 생성자 호출
+        Product p = null;
+        try {
+            p = (Product)clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return p;
     }
 }

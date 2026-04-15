@@ -1,17 +1,12 @@
-package ch06.A2;
+package hw.ch06;
 
-import ch06.A2.framework.Product;
+import hw.ch06.framework.Product;
 
 public class UnderlinePen implements Product {
     private char ulchar;
 
     public UnderlinePen(char ulchar) {
         this.ulchar = ulchar;
-    }
-
-    // 복사 생성자 
-    public UnderlinePen(UnderlinePen prototype) {
-        this.ulchar = prototype.ulchar;
     }
 
     @Override
@@ -26,7 +21,12 @@ public class UnderlinePen implements Product {
 
     @Override
     public Product createCopy() {
-        return new UnderlinePen(this);
-        // 복사 생성자 호출
+        Product p = null;
+        try {
+            p = (Product)clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return p;
     }
 }

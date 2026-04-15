@@ -2,15 +2,18 @@ package ch10.A1;
 
 public class Main {
     public static void main(String[] args) {
-        if (args.length != 2) {
-            System.out.println("Usage: java Main randomseed1 randomseed2");
+        if (args.length != 2) { //args(명령행 인자)의 개수가 2개가 아니면
+            System.out.println("Usage: java Main randomseed1 randomseed2"); //사용법 표시 후 종료
             System.out.println("Example: java Main 314 15");
             System.exit(0);
         }
+        //명령행 인자는 문자열이므로 숫자로 바꿔줌
         int seed1 = Integer.parseInt(args[0]);
         int seed2 = Integer.parseInt(args[1]);
+        
         Player player1 = new Player("Taro", new ProbStrategy(seed1));
         Player player2 = new Player("Hana", new RandomStrategy(seed2));
+        
         for (int i = 0; i < 10000; i++) {
             Hand nextHand1 = player1.nextHand();
             Hand nextHand2 = player2.nextHand();
