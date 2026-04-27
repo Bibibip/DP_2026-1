@@ -5,7 +5,7 @@ import practice.ch04.framework.Product;
 
 public class IDCard extends Product {
     private String owner;
-
+    // 메인에서 1번으로 직접 생성하려면 생성자도 public으로 선언해야 함!
     IDCard(String owner) {  //문자열 + 문자열, 직접 생성하지 못하게 하려고 앞에 public 안 씀
         // 부모의 인자 없는 생성자를 호출함
         // super(); 생략가능

@@ -5,6 +5,7 @@ public abstract class Factory {
     // 제품을 생산하는 방식을 정의하는 메소드
     public final Product create(String owner) {
         Product p = createProduct(owner);   // 실제 제품을 생산
+        // 자식이 구현하기 때문에 어떤 제품이 생산될지는 모름! -> Product로 반환 받음
         registerProduct(p); // 생산된 제품을 등록
         return p;
     }

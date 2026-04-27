@@ -15,7 +15,7 @@ public class Singleton {
     public static Singleton getInstance(){
         return singleton;
     } 
-        // static이 없으면 객체가 만들어져야 호출할 수 있는데 생성자가 private이므로 메소드를 호출할 수가 없음
+        // static이 없으면 객체가 만들어져야 호출할 수 있는데(객체에 속해있기 때문) 생성자가 private이므로 메소드를 호출할 수가 없음
         // static을 써서 객체를 만들지 않아도 호출할 수 있도록 해야함
 
 }

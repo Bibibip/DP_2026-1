@@ -9,7 +9,7 @@ public class IDCardFactory extends Factory {
     // 부모 객체는 자식 타입이 참조할 수 없다
     protected Product createProduct(String owner) { // 실제 제품 성성
         return new IDCard(owner);
-
+        // 실제로 IDCard 객체가 생성되지만, 반환 타입은 Product로! -> 일반화 가능
     }
 
     @Override

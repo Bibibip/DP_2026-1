@@ -1,4 +1,4 @@
-package practice.ch10;
+package hw.ch10;
 
 // 상수를 정의하는 클래스
 public enum Hand {

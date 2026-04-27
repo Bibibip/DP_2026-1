@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class Main{
     public static void main(String[] args) {
-        System.out.println("학번: 이름: ")
+        System.out.println("학번: 이름: ");
 
         Book book = new Book("Java Programming");
         System.out.println("Book name: " + book.getName());

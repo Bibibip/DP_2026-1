@@ -17,7 +17,7 @@ public class IDCardFactory extends Factory {
 
     @Override
     protected void registerProduct(Product product) {
-        IDCard card = (IDCard) product;
+        IDCard card = (IDCard) product; // 다운 캐스팅 (Product -> IDCard) (getSerial, getOwner는 IDCard에만 있기 때문에)
         database.put(card.getSerial(), card.getOwner());    //serial을 키로, owner를 값으로 저장
         System.out.println(product + "을 등록했습니다.");
     }
