@@ -2,9 +2,9 @@ package ch12.Sample;
 
 public class Main {
     public static void main(String[] args) {
-        Display b1 = new StringDisplay("Hello, world.");
-        Display b2 = new SideBorder(b1, '#');
-        Display b3 = new FullBorder(b2);
+        Display b1 = new StringDisplay("Hello, world.");    // 중심
+        Display b2 = new SideBorder(b1, '#');   // 장식자 1
+        Display b3 = new FullBorder(b2);    // 장식자 2 (b2를 FullBorder로 김쌈)
         b1.show();
         b2.show();
         b3.show();
@@ -14,7 +14,7 @@ public class Main {
                             new FullBorder(
                                 new SideBorder(
                                     new FullBorder(
-                                        new StringDisplay("Hello, world.")
+                                        new StringDisplay("Hello, world.")  // 중심
                                     ),
                                     '*'
                                 )
