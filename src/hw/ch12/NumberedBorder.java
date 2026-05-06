@@ -7,7 +7,7 @@ public class NumberedBorder extends Border{
 
     @Override
     public int getColumns() {
-        return display.getColumns() + 4; // 번호와 괄호를 위한 공간 추가
+        return display.getColumns() + 4; 
     }
 
     @Override
