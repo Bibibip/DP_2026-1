@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 
 public class FrameObserver extends Frame implements Observer, ActionListener {
     // GraphText는 통지된 수를 텍스트 필드로 표시하는 static 클래스 
+    // 내부 클래스 (FrameObeserver 안에사민 시용)
     static class GraphText extends TextField implements Observer {
         public GraphText(int columns) {
             super(columns);
@@ -20,6 +21,7 @@ public class FrameObserver extends Frame implements Observer, ActionListener {
         @Override
         public void update(NumberGenerator generator) {
             int number = generator.getNumber();
+
             String text = number + ":";
             for (int i = 0; i < number; i++) {
                 text += '*';
@@ -35,14 +37,16 @@ public class FrameObserver extends Frame implements Observer, ActionListener {
         @Override
         public void update(NumberGenerator generator) {
             number = generator.getNumber();
-            repaint();
+            repaint();  // 도화지를 클릭하거 paint()르 호출
         }
 
         public void paint(Graphics g) {
             int width = getWidth();
             int height = getHeight();
+            // 흰색 원
             g.setColor(Color.white);
             g.fillArc(0, 0, width, height, 0, 360);
+            // 빨간색 원호
             g.setColor(Color.red);
             g.fillArc(0, 0, width, height, 90, - number * 360 / 50);
         }

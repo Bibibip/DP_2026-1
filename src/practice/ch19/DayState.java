@@ -1,5 +1,6 @@
-package ch19.A3;
+package practice.ch19;
 
+// 주간 상태를 나타내는 클래스
 public class DayState implements State {
     private static DayState singleton = new DayState();
 
@@ -8,20 +9,18 @@ public class DayState implements State {
 
     public static State getInstance() {
         return singleton;
-    }
+    }   // 싱글턴 패턴 적용
 
     @Override
     public void doClock(Context context, int hour) {
-        if (hour < 9 || 21 <= hour) {   //엇 숫자 녹강 참고
+        if (hour < 9 || 17 <= hour) {   // 야간 시간이면...context한테 야간으로 상태 바꾸라고 알려줌
             context.changeState(NightState.getInstance());
-        } else if (12 <= hour && hour < 13) {
-            context.changeState(NoonState.getInstance());
         }
     }
 
     @Override
     public void doUse(Context context) {
-        context.recordLog("금고 사용(주간)");
+        context.recordLog("금고사용(주간)");
     }
 
     @Override
